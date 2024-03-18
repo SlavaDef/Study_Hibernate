@@ -1,8 +1,12 @@
 package com.study.storage;
 
+import com.study.entity.Employer;
 import lombok.Getter;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.cfg.Environment;
+
+import java.util.Properties;
 
 public class HibernateUtil {
 
@@ -17,7 +21,16 @@ public class HibernateUtil {
     }
 
     private HibernateUtil() { // приватний конструктор створює обьект і там ми вже конфігуруємо його
+        Properties properties = new Properties();
+        properties.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
+        properties.put(Environment.URL, "jdbc:mysql://localhost/hiber?serverTimezone=Europe/Kiev");
+        properties.put(Environment.USER, "root");
+        properties.put(Environment.PASS, "1234");
+
+
         sessionFactory = new Configuration()
+                //.configure("hibernate.properties")
+                 .setProperties(properties)
                 .addAnnotatedClass(Employer.class) // додаємо клас з яким працюємо
                 .buildSessionFactory();
     }

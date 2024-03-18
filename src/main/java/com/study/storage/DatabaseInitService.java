@@ -1,14 +1,13 @@
 package com.study.storage;
 
 import org.flywaydb.core.Flyway;
-import org.flywaydb.core.api.FlywayException;
 
 public class DatabaseInitService {
-    public void initDb() throws FlywayException {
+    public void initDb()  {
     // Create the Flyway instance and point it to the database
     Flyway flyway = Flyway
             .configure()
-            .dataSource(StorageConstants.MY_SQL, "root", "1234")
+            .dataSource(StorageConstants.CONNECTION_URL, null, null)
             .load();
 
     // Start the migration
