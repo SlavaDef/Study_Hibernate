@@ -14,6 +14,7 @@ import java.sql.Date;
 @Entity
 @Data
 @Table(name = "employer")
+
 public class Employer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,4 +24,22 @@ public class Employer {
     private String department;
     private String project;
     private Date deadline;
+
+    public Employer(String name, String department, String project, Date deadline) {
+        this.name = name;
+        this.department = department;
+        this.project = project;
+        this.deadline = deadline;
+    }
+
+    public Employer(long id, String name, String department, String project, Date deadline) {
+        this.id = id;
+        this.name = name;
+        this.department = department;
+        this.project = project;
+        this.deadline = deadline;
+    }
+
+    public Employer() {
+    }
 }

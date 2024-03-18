@@ -12,17 +12,17 @@ public class EmployerDtoImp {
 
     HibernateUtil util = HibernateUtil.getInstance();
 
-    public void addEmployee(Employer employee ) {
-        try (Session session = util.getSessionFactory().openSession()) {
+    public Employer addEmployee(Employer employee) {
+        try (Session session = HibernateUtil.getInstance().getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
-            session.save(employee);
+            session.persist(employee);
             transaction.commit();
-
+            return employee;
         }
     }
 
-    public List<Employer> getAll(){
-        try(Session session = util.getSessionFactory().openSession() ) {
+    public List<Employer> getAll() {
+        try (Session session = util.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
 
             Query<Employer> query = session.createNamedQuery("Employer_FindAll_Employer", Employer.class);
@@ -34,22 +34,38 @@ public class EmployerDtoImp {
     }
 
     public List<Employer> getAllEmployes() {
-        try (Session session = util.getSessionFactory().openSession() ) {
+        try (Session session = util.getSessionFactory().openSession()) {
             Query<Employer> query = session.createQuery("from Employer", Employer.class);
             return query.list();
+            // or return session.createQuery("from Employer ", Employer.class).list();
         }
     }
 
-    public void getEmpById(long id){
-        try( Session session = util.getSessionFactory().openSession();){
+    public void getEmpById(long id) {
+        try (Session session = util.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
 
             Query<Employer> query =
                     session.createNamedQuery("Employer_FindById", Employer.class)
-                            .setParameter("id",id);
+                            .setParameter("id", id);
             List<Employer> resultLIst = query.list();
             transaction.commit();
             System.out.println(resultLIst);
+        }
+    }
+
+    public Employer getById(Long id) {
+        try (Session session = util.getSessionFactory().openSession()) {
+            return session.get(Employer.class, id);
+        }
+    }
+
+    public boolean removeEmployer(Employer employer) {
+        try (Session session = util.getSessionFactory().openSession()) {
+            Transaction transaction = session.beginTransaction();
+            session.remove(employer);
+            transaction.commit();
+            return true;
         }
     }
 }
