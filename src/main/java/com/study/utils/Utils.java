@@ -1,5 +1,7 @@
 package com.study.utils;
 
+import java.util.Date;
+import java.sql.Timestamp;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
@@ -22,5 +24,12 @@ public class Utils { // class gets random names, departments and projects
         List<String> list = Arrays.asList("project_1", "project_2", "project_3", "project_4",
                 "project_5","6","project_7","project_8","project_9");
         return list.get(ThreadLocalRandom.current().nextInt(9));
+    }
+
+    public static Timestamp getRandomTimestamp(){
+        return new Timestamp(
+                ThreadLocalRandom.current()
+                        .nextLong(new Date(0).getTime(), new Date().getTime())
+        );
     }
 }

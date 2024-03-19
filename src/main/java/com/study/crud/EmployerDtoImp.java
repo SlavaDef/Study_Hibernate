@@ -80,4 +80,27 @@ public class EmployerDtoImp {
     }
 
 
+    public Employer updateEmployer(Long id) {
+       try (Session session = util.getSessionFactory().openSession()) {
+            Transaction tx1 = session.beginTransaction();
+            Employer employer = session.get(Employer.class, id);
+            employer.setName(getRandomName());
+            employer.setDepartment(getRandomDepartment());
+            employer.setProject(getRandomProject());
+            session.merge(employer);
+            tx1.commit();
+            return employer;
+        }
+    }
+
+
+    public Employer save(Employer employer) { // another case of save Employer by Object
+        try (Session session = util.getSessionFactory().openSession()) {
+            Transaction tx1 = session.beginTransaction();
+            session.persist(employer);
+            tx1.commit();
+            return employer;
+        }
+
+    }
 }

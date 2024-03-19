@@ -37,7 +37,7 @@ public class Employer {
         this.deadline = deadline;
     }
 
-    public Employer(long id, String name, String department, String project, Date deadline) {
+    public Employer(Long id, String name, String department, String project, Date deadline) {
         this.id = id;
         this.name = name;
         this.department = department;
@@ -60,7 +60,7 @@ public class Employer {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Employer employer)) return false;
-        return getId() == employer.getId() && Objects.equals(getName(), employer.getName()) && Objects.equals(getDepartment(), employer.getDepartment()) && Objects.equals(getProject(), employer.getProject()) && Objects.equals(getDeadline(), employer.getDeadline());
+        return Objects.equals(getId(), employer.getId()) && Objects.equals(getName(), employer.getName()) && Objects.equals(getDepartment(), employer.getDepartment()) && Objects.equals(getProject(), employer.getProject()) && Objects.equals(getDeadline(), employer.getDeadline());
     }
 
     @Override
