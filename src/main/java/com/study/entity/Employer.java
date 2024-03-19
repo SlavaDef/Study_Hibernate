@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.sql.Date;
+import java.util.List;
 import java.util.Objects;
 
 @NamedQueries({
@@ -24,11 +25,16 @@ public class Employer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "name")
+    @Column(length = 50,nullable = false)
     private String name;
+    @Column(length = 50)
     private String department;
+    @Column(length = 50)
     private String project;
     private Date deadline;
+
+    @OneToMany(mappedBy = "employer", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+    private List<EmployerContacts> contacts;
 
     public Employer(String name, String department, String project, Date deadline) {
         this.name = name;
@@ -36,6 +42,8 @@ public class Employer {
         this.project = project;
         this.deadline = deadline;
     }
+
+
 
     public Employer(Long id, String name, String department, String project, Date deadline) {
         this.id = id;
@@ -53,6 +61,7 @@ public class Employer {
                 ", department='" + department + '\'' +
                 ", project='" + project + '\'' +
                 ", deadline=" + deadline +
+                ", contacts=" + contacts +
                 '}';
     }
 

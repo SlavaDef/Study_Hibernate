@@ -1,6 +1,7 @@
 package com.study.storage;
 
 import com.study.entity.Employer;
+import com.study.entity.EmployerContacts;
 import lombok.Getter;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -34,7 +35,8 @@ public class HibernateUtil {
         sessionFactory = new Configuration()
                 //.configure("hibernate.properties")
                  .setProperties(properties)
-                .addAnnotatedClass(Employer.class) // додаємо клас з яким працюємо
+                .addAnnotatedClass(Employer.class)// додаємо клас з яким працюємо
+                .addAnnotatedClass(EmployerContacts.class)
                 .buildSessionFactory();
     }
 

@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0f12f5e-283a-4033-8b7b-da30f906cd3f" name="Changes" comment="commit 5">
+    <list default="true" id="a0f12f5e-283a-4033-8b7b-da30f906cd3f" name="Changes" comment="commit 6">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/study/crud/EmpContactImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/study/entity/EmployerContacts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/prop" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestEmpContactImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/study/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/study/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/study/crud/EmployerDtoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/study/crud/EmployerDtoImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/study/entity/Employer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/study/entity/Employer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/study/storage/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/study/storage/HibernateUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/study/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/study/utils/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestEmployerDtoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestEmployerDtoImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +46,7 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.App.executor": "Run",
+    "JUnit.TestEmpContactImp.testIfContactIsAdd.executor": "Run",
     "JUnit.TestEmployerDtoImp.TestUpdateEmployer.executor": "Run",
     "JUnit.TestEmployerDtoImp.executor": "Run",
     "JUnit.TestEmployerDtoImp.getAllShouldReturnSavedEmployers.executor": "Run",
@@ -77,7 +82,7 @@
       <recent name="C:\Users\Admin\Desktop\Progets\Hibernate_stydy\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestEmployerDtoImp">
+  <component name="RunManager" selected="JUnit.TestEmpContactImp.testIfEmpContactReturnByIdOk">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.study.App" />
       <module name="Hibernate_stydy" />
@@ -91,6 +96,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestEmpContactImp.testIfContactIsAdd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Hibernate_stydy" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestEmpContactImp" />
+      <option name="METHOD_NAME" value="testIfContactIsAdd" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestEmpContactImp.testIfEmpContactReturnByIdOk" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Hibernate_stydy" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestEmpContactImp" />
+      <option name="METHOD_NAME" value="testIfEmpContactReturnByIdOk" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestEmployerDtoImp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Hibernate_stydy" />
       <option name="PACKAGE_NAME" value="" />
@@ -100,31 +125,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestEmployerDtoImp.TestUpdateEmployer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestEmployerDtoImp.testIfEmpIsAdd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Hibernate_stydy" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestEmployerDtoImp" />
-      <option name="METHOD_NAME" value="TestUpdateEmployer" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestEmployerDtoImp.getAllShouldReturnSavedEmployers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Hibernate_stydy" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestEmployerDtoImp" />
-      <option name="METHOD_NAME" value="getAllShouldReturnSavedEmployers" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestEmployerDtoImp.saveTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Hibernate_stydy" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestEmployerDtoImp" />
-      <option name="METHOD_NAME" value="saveTest" />
+      <option name="METHOD_NAME" value="testIfEmpIsAdd" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -132,11 +137,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestEmployerDtoImp" />
-        <item itemvalue="JUnit.TestEmployerDtoImp.saveTest" />
+        <item itemvalue="JUnit.TestEmpContactImp.testIfEmpContactReturnByIdOk" />
+        <item itemvalue="JUnit.TestEmpContactImp.testIfContactIsAdd" />
         <item itemvalue="Application.App" />
-        <item itemvalue="JUnit.TestEmployerDtoImp.getAllShouldReturnSavedEmployers" />
-        <item itemvalue="JUnit.TestEmployerDtoImp.TestUpdateEmployer" />
+        <item itemvalue="JUnit.TestEmployerDtoImp.testIfEmpIsAdd" />
+        <item itemvalue="JUnit.TestEmployerDtoImp" />
       </list>
     </recent_temporary>
   </component>
@@ -157,7 +162,7 @@
       <updated>1710777085226</updated>
       <workItem from="1710777086278" duration="971000" />
       <workItem from="1710778092370" duration="15124000" />
-      <workItem from="1710861665619" duration="9562000" />
+      <workItem from="1710861665619" duration="19086000" />
     </task>
     <task id="LOCAL-00001" summary="commit 2">
       <option name="closed" value="true" />
@@ -191,7 +196,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710863203873</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="commit 6">
+      <option name="closed" value="true" />
+      <created>1710871800144</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710871800144</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,6 +216,7 @@
     <MESSAGE value="commit 3" />
     <MESSAGE value="commit 4" />
     <MESSAGE value="commit 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 5" />
+    <MESSAGE value="commit 6" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 6" />
   </component>
 </project>
