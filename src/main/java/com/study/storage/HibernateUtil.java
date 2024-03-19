@@ -26,6 +26,9 @@ public class HibernateUtil {
         properties.put(Environment.URL, "jdbc:mysql://localhost/hiber?serverTimezone=Europe/Kiev");
         properties.put(Environment.USER, "root");
         properties.put(Environment.PASS, "1234");
+        properties.put(Environment.SHOW_SQL, "true");
+        // properties.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
+        properties.put(Environment.HBM2DDL_AUTO, "create-drop");
 
 
         sessionFactory = new Configuration()

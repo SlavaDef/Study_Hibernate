@@ -4,12 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0f12f5e-283a-4033-8b7b-da30f906cd3f" name="Changes" comment="commit 3">
-      <change afterPath="$PROJECT_DIR$/src/test/java/TestEmployerDtoImp.java" afterDir="false" />
+    <list default="true" id="a0f12f5e-283a-4033-8b7b-da30f906cd3f" name="Changes" comment="commit 4">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/study/utils/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/study/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/study/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/study/dto/EmployerDtoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/study/dto/EmployerDtoImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/study/dto/EmployerDtoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/study/crud/EmployerDtoImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/study/entity/Employer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/study/entity/Employer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/study/storage/DatabaseInitService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/study/storage/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/study/storage/HibernateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/study/storage/StorageConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/study/utils/StorageConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/V2__create_init_user_useradress_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db.migration/V2__create_init_user_useradress_table" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db.migration/V1__create_init_employes_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db.migration/V1__create_init_employes_table" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestEmployerDtoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestEmployerDtoImp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +48,8 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.App.executor": "Run",
+    "JUnit.TestEmployerDtoImp.executor": "Run",
+    "JUnit.TestEmployerDtoImp.testIfDeleteOk.executor": "Run",
     "JUnit.TestEmployerDtoImp.testIfEmpIsAdd.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -64,10 +73,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Desktop\Progets\Hibernate_stydy\src\main\resources\db.migration" />
       <recent name="C:\Users\Admin\Desktop\Progets\Hibernate_stydy\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.App">
+  <component name="RunManager" selected="JUnit.TestEmployerDtoImp.testIfEmpIsAdd">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.study.App" />
       <module name="Hibernate_stydy" />
@@ -77,6 +87,25 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestEmployerDtoImp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Hibernate_stydy" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestEmployerDtoImp" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestEmployerDtoImp.testIfDeleteOk" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Hibernate_stydy" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestEmployerDtoImp" />
+      <option name="METHOD_NAME" value="testIfDeleteOk" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -91,10 +120,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestEmployerDtoImp.testIfEmpReturnIdOk" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Hibernate_stydy" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestEmployerDtoImp" />
+      <option name="METHOD_NAME" value="testIfEmpReturnIdOk" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.App" />
         <item itemvalue="JUnit.TestEmployerDtoImp.testIfEmpIsAdd" />
+        <item itemvalue="JUnit.TestEmployerDtoImp.testIfEmpReturnIdOk" />
+        <item itemvalue="JUnit.TestEmployerDtoImp.testIfDeleteOk" />
+        <item itemvalue="JUnit.TestEmployerDtoImp" />
+        <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
   </component>
@@ -114,7 +156,8 @@
       <option name="presentableId" value="Default" />
       <updated>1710777085226</updated>
       <workItem from="1710777086278" duration="971000" />
-      <workItem from="1710778092370" duration="14770000" />
+      <workItem from="1710778092370" duration="15124000" />
+      <workItem from="1710861665619" duration="1262000" />
     </task>
     <task id="LOCAL-00001" summary="commit 2">
       <option name="closed" value="true" />
@@ -132,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710795739372</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="commit 4">
+      <option name="closed" value="true" />
+      <created>1710799699841</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1710799699841</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,22 +193,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="commit 2" />
     <MESSAGE value="commit 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/study/App.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/study/App.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="commit 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 4" />
   </component>
 </project>

@@ -1,4 +1,4 @@
-package com.study.storage;
+package com.study.utils;
 
 public class StorageConstants {
 

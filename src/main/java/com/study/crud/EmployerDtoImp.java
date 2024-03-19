@@ -1,11 +1,12 @@
-package com.study.dto;
+package com.study.crud;
 
 import com.study.entity.Employer;
 import com.study.storage.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
-
+import static com.study.utils.Utils.*;
+import java.sql.Date;
 import java.util.List;
 
 public class EmployerDtoImp {
@@ -28,7 +29,9 @@ public class EmployerDtoImp {
             Query<Employer> query = session.createNamedQuery("Employer_FindAll_Employer", Employer.class);
             List<Employer> resultLIst = query.list();
             transaction.commit();
-            System.out.println(resultLIst);
+            for (Employer emp: resultLIst) {
+                System.out.println(emp);
+            }
             return resultLIst;
         }
     }
@@ -41,7 +44,7 @@ public class EmployerDtoImp {
         }
     }
 
-    public void getEmpById(long id) {
+    public void getEmpById(Long id) {
         try (Session session = util.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
 
@@ -54,7 +57,7 @@ public class EmployerDtoImp {
         }
     }
 
-    public Employer getById(Long id) {
+    public Employer getById(Long id) { // another case of find Employer by id
         try (Session session = util.getSessionFactory().openSession()) {
             return session.get(Employer.class, id);
         }
@@ -68,4 +71,13 @@ public class EmployerDtoImp {
             return true;
         }
     }
+
+    public void creatingEmployers(int count) {
+        for (int i = 0; i < count; i++) {
+            addEmployee(new Employer(getRandomName(),getRandomDepartment(), getRandomProject(),
+                    new Date(System.currentTimeMillis())));
+        }
+    }
+
+
 }
