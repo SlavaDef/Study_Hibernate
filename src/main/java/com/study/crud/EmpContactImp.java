@@ -38,7 +38,7 @@ public class EmpContactImp {
 
     public List<EmployerContacts> getAllContacts() {
         try (Session session = util.getSessionFactory().openSession()) {
-            return session.createQuery("from EmployerContacts ", EmployerContacts.class).list();
+            return session.createQuery("from EmployerContacts", EmployerContacts.class).list();
         }
     }
 

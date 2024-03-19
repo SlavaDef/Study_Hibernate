@@ -33,7 +33,8 @@ public class Employer {
     private String project;
     private Date deadline;
 
-    @OneToMany(mappedBy = "employer", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "employer", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+   // @JoinColumn(name = "employee_id")
     private List<EmployerContacts> contacts;
 
     public Employer(String name, String department, String project, Date deadline) {

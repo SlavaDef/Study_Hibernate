@@ -1,6 +1,7 @@
 package com.study.crud;
 
 import com.study.entity.Employer;
+import com.study.entity.EmployerContacts;
 import com.study.storage.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

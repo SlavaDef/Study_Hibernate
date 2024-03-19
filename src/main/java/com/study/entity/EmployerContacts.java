@@ -7,7 +7,7 @@ import java.util.Objects;
 
 @NoArgsConstructor
 
-@AllArgsConstructor
+//@AllArgsConstructor
 @Getter
 @Setter
 @Table(name = "emp_contacts")
@@ -24,9 +24,9 @@ public class EmployerContacts {
     @Column(name = "emp_email",length = 50, nullable = false)
     private String empEmail;
 
-    @ToString.Exclude
+   // @ToString.Exclude
     @ManyToOne
-    @JoinColumn(name = "employer_id")
+    @JoinColumn(name = "employer_id", nullable = true)
     private Employer employer;
 
     public EmployerContacts(String mobPhone, String empAddress, String empEmail) {
@@ -60,11 +60,12 @@ public class EmployerContacts {
                 '}';
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof EmployerContacts that)) return false;
-        return Objects.equals(getId(), that.getId()) && Objects.equals(getMobPhone(), that.getMobPhone()) && Objects.equals(getEmpAddress(), that.getEmpAddress()) && Objects.equals(getEmpEmail(), that.getEmpEmail()) && Objects.equals(getEmployer(), that.getEmployer());
+        if (!(o instanceof EmployerContacts contacts)) return false;
+        return Objects.equals(getId(), contacts.getId()) && Objects.equals(getMobPhone(), contacts.getMobPhone()) && Objects.equals(getEmpAddress(), contacts.getEmpAddress()) && Objects.equals(getEmpEmail(), contacts.getEmpEmail()) && Objects.equals(getEmployer(), contacts.getEmployer());
     }
 
     @Override
