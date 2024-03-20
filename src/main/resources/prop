@@ -5,3 +5,22 @@ hibernate.connection.username=root
 hibernate.connection.password=1234
 hibernate.show_sql=true
 hibernate.hbm2ddl=create-drop
+
+
+ EmployeeTask task1 = new EmployeeTask();
+        task1.setDescription("Make money");
+        session.persist(task1);
+
+        EmployeeTask task2 = new EmployeeTask();
+        task2.setDescription("Ничего не делать");
+        session.persist(task2);
+        session.flush();
+
+        Employer director = session.find(Employer.class, 2L);
+        director.getTasks().add(task1);
+        director.getTasks().add(task2);
+
+        session.update(director);
+        session.flush();
+
+        System.out.println(dtoImp.getById(2L));

@@ -2,30 +2,29 @@ package com.study.entity;
 
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.sql.Date;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 @NamedQueries({
         @NamedQuery(name = "Employer_FindAll_Employer",
                 query = "from Employer"),
         @NamedQuery(name = "Employer_FindById",
-                query = "from Employer where id = :id") } )
+                query = "from Employer where id = :id")})
 
-@NoArgsConstructor
-@Getter
-@Setter
+//@NoArgsConstructor
+//@AllArgsConstructor
+//@Getter
+//@Setter
+@Data
 @Table(name = "employer")
 @Entity
 public class Employer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(length = 50,nullable = false)
+    @Column(length = 50, nullable = false)
     private String name;
     @Column(length = 50)
     private String department;
@@ -33,9 +32,15 @@ public class Employer {
     private String project;
     private Date deadline;
 
-    @OneToMany(mappedBy = "employer", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-   // @JoinColumn(name = "employee_id")
-    private List<EmployerContacts> contacts;
+    // @OneToMany(mappedBy = "employer", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    // @JoinColumn(name = "employee_id")
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "employee_id")
+    private List<EmpContacts> contacts = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "employee_id")
+    private Set<EmployeeTask> tasks;
 
     public Employer(String name, String department, String project, Date deadline) {
         this.name = name;
@@ -44,9 +49,10 @@ public class Employer {
         this.deadline = deadline;
     }
 
+    public Employer() {
+    }
 
-
-    public Employer(Long id, String name, String department, String project, Date deadline) {
+    /*  public Employer(Long id, String name, String department, String project, Date deadline) {
         this.id = id;
         this.name = name;
         this.department = department;
@@ -76,5 +82,5 @@ public class Employer {
     @Override
     public int hashCode() {
         return Objects.hash(getId(), getName(), getDepartment(), getProject(), getDeadline());
-    }
+    }  */
 }

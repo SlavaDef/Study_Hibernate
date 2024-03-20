@@ -3,19 +3,18 @@ package com.study.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Objects;
-
-@NoArgsConstructor
+//@NoArgsConstructor
 
 //@AllArgsConstructor
-@Getter
-@Setter
+//@Getter
+//@Setter
+@Data
 @Table(name = "emp_contacts")
 @Entity
-public class EmployerContacts {
+public class EmpContacts {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+   // @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column( length = 25, nullable = false)
     private String mobPhone;
@@ -23,18 +22,24 @@ public class EmployerContacts {
     private String empAddress;
     @Column(name = "emp_email",length = 50, nullable = false)
     private String empEmail;
+    @Column(name="employee_id")
+    private Long employeeId;
 
    // @ToString.Exclude
-    @ManyToOne
-    @JoinColumn(name = "employer_id", nullable = true)
-    private Employer employer;
+   // @ManyToOne
+   // @JoinColumn(name = "employer_id", nullable = true)
+  //  private Employer employer;
 
-    public EmployerContacts(String mobPhone, String empAddress, String empEmail) {
+    public EmpContacts(String mobPhone, String empAddress, String empEmail) {
         this.mobPhone = mobPhone;
         this.empAddress = empAddress;
         this.empEmail = empEmail;
     }
 
+    public EmpContacts() {
+    }
+
+    /*
     public EmployerContacts(Long id, String mobPhone, String empAddress, String empEmail) {
         this.id = id;
         this.mobPhone = mobPhone;
@@ -71,5 +76,5 @@ public class EmployerContacts {
     @Override
     public int hashCode() {
         return Objects.hash(getId(), getMobPhone(), getEmpAddress(), getEmpEmail(), getEmployer());
-    }
+    } */
 }

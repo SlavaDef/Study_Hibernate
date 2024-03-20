@@ -1,7 +1,6 @@
 package com.study.crud;
 
 import com.study.entity.Employer;
-import com.study.entity.EmployerContacts;
 import com.study.storage.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -13,6 +12,7 @@ import java.util.List;
 public class EmployerDtoImp {
 
     HibernateUtil util = HibernateUtil.getInstance();
+    //EmployerDtoImp imp = new EmployerDtoImp();
 
     public Employer addEmployee(Employer employee) {
         try (Session session = HibernateUtil.getInstance().getSessionFactory().openSession()) {
@@ -39,7 +39,7 @@ public class EmployerDtoImp {
 
     public List<Employer> getAllEmployes() {
         try (Session session = util.getSessionFactory().openSession()) {
-            Query<Employer> query = session.createQuery("from Employer", Employer.class);
+            Query<Employer> query = session.createQuery("from Employer join EmpContacts ", Employer.class);
             return query.list();
             // or return session.createQuery("from Employer ", Employer.class).list();
         }
@@ -74,6 +74,7 @@ public class EmployerDtoImp {
     }
 
     public void creatingEmployers(int count) {
+
         for (int i = 0; i < count; i++) {
             addEmployee(new Employer(getRandomName(),getRandomDepartment(), getRandomProject(),
                     new Date(System.currentTimeMillis())));

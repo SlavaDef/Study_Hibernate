@@ -1,63 +1,53 @@
 package com.study;
 
 import com.study.crud.EmpContactImp;
+import com.study.crud.EmployeeTaskImp;
 import com.study.crud.EmployerDtoImp;
+import com.study.entity.EmpContacts;
 import com.study.entity.Employer;
-import com.study.entity.EmployerContacts;
 
-import java.sql.Date;
 import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
 
 import static com.study.utils.Utils.*;
-import static com.study.utils.Utils.getRandomEmails;
 
 
 public class App {
     public static void main(String[] args) {
-
+       // Session session = HibernateUtil.getInstance().getSessionFactory().openSession();
         EmployerDtoImp dtoImp = new EmployerDtoImp();
         EmpContactImp cont = new EmpContactImp();
+        EmployeeTaskImp taskImp = new EmployeeTaskImp();
 
-      //  dtoImp.creatingEmployers(9);
-      //  cont.creatingContacts(9);
+        dtoImp.creatingEmployers(9);
+        cont.creatingContacts(9);
 
-      /*  Employer employer = new Employer(getRandomName(),getRandomDepartment(), getRandomProject(),
-                new Date(System.currentTimeMillis()));
-        employer.setContacts(List.of(new EmployerContacts(getRandomPhones(),getRandomAddress(),
-                getRandomEmails()),new EmployerContacts(getRandomPhones(),getRandomAddress(),
-                getRandomEmails())));
-        dtoImp.addEmployee(employer);
-        System.out.println(dtoImp.getById(1L)); */
 
-Employer employer = new Employer("fff", "ffff", "fdfdfd", new Date(System.currentTimeMillis() ));
-EmployerContacts contacts = new EmployerContacts("555", "ddfdd", "ddfdd");
-        EmployerContacts contacts2 = new EmployerContacts("555", "ddfdd", "ddfdd");
-        employer.setContacts(List.of(contacts,contacts2));
-        dtoImp.addEmployee(employer);
-      //  cont.addContact(new EmployerContacts(getRandomPhones(),getRandomAddress(),
-            //    getRandomEmails()));
-      //  cont.addContact(new EmployerContacts(getRandomPhones(),getRandomAddress(),
-            //    getRandomEmails()));
+       // System.out.println(dtoImp.getAllEmployes());
+       // dtoImp.getAll();
+        EmpContacts contacts = new EmpContacts();
+        contacts.setMobPhone(getRandomPhones());
+        contacts.setEmpAddress(getRandomAddress());
+        contacts.setEmpEmail(getRandomEmails());
 
-      // System.out.println(cont.getById(1L));
-      //  System.out.println(cont.getById(8L));
-       //dtoImp.getAll();
+        Employer employer = dtoImp.getById(5L);
+        employer.setContacts(List.of(contacts));
+        dtoImp.updateEmployer(employer.getId());
+        System.out.println(dtoImp.getById(5L));
 
-      //  dtoImp.updateEmployer(2L);
-       // System.out.println(dtoImp.getById(2L));
-      //  System.out.println(new Date(System.currentTimeMillis()));
-       // System.out.println(new Date(new Date().getTime()));
+      /*  EmployeeTask task1 = new EmployeeTask();
+        task1.setDescription("Make money");
+        taskImp.addTask(task1);
+        EmployeeTask task2 = new EmployeeTask();
+        task1.setDescription("Copi Doc");
+        taskImp.addTask(task2);
 
-      //  java.util.Date utilDate = new java.util.Date();
-      //  java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
-      //  System.out.println(sqlDate);
+        Employer Bob = dtoImp.getById(2L);
+        Bob.getTasks().add(task1);
+        Bob.getTasks().add(task2);
+        dtoImp.updateEmployer(2L);
 
-        // dtoImp.getAll();
-        //  dtoImp.getAllEmployes();
-        //System.out.println( dtoImp.getAllEmployes());
-//dtoImp.getEmpById(3L);
-         System.out.println(dtoImp.getById(1L));
+        System.out.println(dtoImp.getById(2L)); */
+
 
     }
 }

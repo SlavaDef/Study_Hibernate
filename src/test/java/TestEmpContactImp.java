@@ -1,6 +1,5 @@
 import com.study.crud.EmpContactImp;
-import com.study.entity.Employer;
-import com.study.entity.EmployerContacts;
+import com.study.entity.EmpContacts;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -11,10 +10,10 @@ public class TestEmpContactImp {
 
     EmpContactImp dao;
 
-     EmployerContacts contact;
+     EmpContacts contact;
 
      public TestEmpContactImp(){
-         contact = new EmployerContacts(getRandomPhones(),getRandomAddress(),
+         contact = new EmpContacts(getRandomPhones(),getRandomAddress(),
                  getRandomEmails());
      }
 
@@ -26,11 +25,11 @@ public class TestEmpContactImp {
 
     @Test
     void testIfContactIsAdd() {
-        EmployerContacts contacts = new EmployerContacts();
+        EmpContacts contacts = new EmpContacts();
         contacts.setMobPhone("Some phone");
         contacts.setEmpEmail("some email");
         dao.addContact(contacts);
-        EmployerContacts some = dao.getById(contacts.getId());
+        EmpContacts some = dao.getById(contacts.getId());
         assertEquals(contacts.getMobPhone(), some.getMobPhone());
         assertEquals(contacts.getEmpEmail(), some.getEmpEmail());
     }
@@ -38,7 +37,7 @@ public class TestEmpContactImp {
     @Test
     void testIfEmpContactReturnByIdOk() {
         dao.addContact(contact);
-        EmployerContacts find = dao.getById(contact.getId());
+        EmpContacts find = dao.getById(contact.getId());
         assertEquals(contact.getMobPhone(), find.getMobPhone());
     }
 }

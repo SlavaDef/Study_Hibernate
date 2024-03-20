@@ -1,7 +1,8 @@
 package com.study.storage;
 
+import com.study.entity.EmployeeTask;
 import com.study.entity.Employer;
-import com.study.entity.EmployerContacts;
+import com.study.entity.EmpContacts;
 import lombok.Getter;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -36,7 +37,8 @@ public class HibernateUtil {
                 //.configure("hibernate.properties")
                  .setProperties(properties)
                 .addAnnotatedClass(Employer.class)// додаємо клас з яким працюємо
-                .addAnnotatedClass(EmployerContacts.class)
+                .addAnnotatedClass(EmpContacts.class)
+                .addAnnotatedClass(EmployeeTask.class)
                 .buildSessionFactory();
     }
 

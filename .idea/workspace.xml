@@ -4,13 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0f12f5e-283a-4033-8b7b-da30f906cd3f" name="Changes" comment="commit 7">
+    <list default="true" id="a0f12f5e-283a-4033-8b7b-da30f906cd3f" name="Changes" comment="commit 8">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/study/crud/EmployeeTaskImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/study/entity/EmployeeTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/study/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/study/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/study/crud/EmpContactImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/study/crud/EmpContactImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/study/crud/EmployerDtoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/study/crud/EmployerDtoImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/study/entity/Employer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/study/entity/Employer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/study/entity/EmployerContacts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/study/entity/EmployerContacts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/study/entity/EmployerContacts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/study/entity/EmpContacts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/study/storage/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/study/storage/HibernateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/prop" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/prop" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestEmpContactImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestEmpContactImp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +48,7 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.App.executor": "Run",
+    "JUnit.TestEmpContactImp.executor": "Run",
     "JUnit.TestEmpContactImp.testIfContactIsAdd.executor": "Run",
     "JUnit.TestEmpContactImp.testIfEmpContactReturnByIdOk.executor": "Run",
     "JUnit.TestEmployerDtoImp.TestUpdateEmployer.executor": "Run",
@@ -79,7 +86,7 @@
       <recent name="C:\Users\Admin\Desktop\Progets\Hibernate_stydy\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.App">
+  <component name="RunManager" selected="JUnit.TestEmpContactImp.testIfEmpContactReturnByIdOk">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.study.App" />
       <module name="Hibernate_stydy" />
@@ -89,6 +96,15 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestEmpContactImp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Hibernate_stydy" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestEmpContactImp" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -122,23 +138,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestEmployerDtoImp.testIfEmpIsAdd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Hibernate_stydy" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestEmployerDtoImp" />
-      <option name="METHOD_NAME" value="testIfEmpIsAdd" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.App" />
         <item itemvalue="JUnit.TestEmpContactImp.testIfEmpContactReturnByIdOk" />
         <item itemvalue="JUnit.TestEmpContactImp.testIfContactIsAdd" />
-        <item itemvalue="JUnit.TestEmployerDtoImp.testIfEmpIsAdd" />
+        <item itemvalue="JUnit.TestEmpContactImp" />
         <item itemvalue="JUnit.TestEmployerDtoImp" />
+        <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
   </component>
@@ -159,7 +165,9 @@
       <updated>1710777085226</updated>
       <workItem from="1710777086278" duration="971000" />
       <workItem from="1710778092370" duration="15124000" />
-      <workItem from="1710861665619" duration="23459000" />
+      <workItem from="1710861665619" duration="23503000" />
+      <workItem from="1710885945937" duration="385000" />
+      <workItem from="1710946662024" duration="5447000" />
     </task>
     <task id="LOCAL-00001" summary="commit 2">
       <option name="closed" value="true" />
@@ -209,7 +217,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710881710178</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="commit 8">
+      <option name="closed" value="true" />
+      <created>1710885886420</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1710885886420</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,6 +239,7 @@
     <MESSAGE value="commit 5" />
     <MESSAGE value="commit 6" />
     <MESSAGE value="commit 7" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 7" />
+    <MESSAGE value="commit 8" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 8" />
   </component>
 </project>
